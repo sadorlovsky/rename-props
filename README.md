@@ -1,5 +1,7 @@
 # rename-props
 
+[![Build Status](https://travis-ci.org/sadorlovsky/rename-props.svg?branch=master)](https://travis-ci.org/sadorlovsky/rename-props)
+
 > rename object properties
 
 ## Install
