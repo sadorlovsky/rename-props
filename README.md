@@ -1,6 +1,6 @@
 # rename-props
 
-> rename Object properties
+> rename object properties
 
 ## Install
 
