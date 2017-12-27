@@ -7,7 +7,7 @@
 ## Install
 
 ```bash
-$ yarn add rename-props
+$ yarn add @sadorlovsky/rename-props
 ```
 
 ## Usage
