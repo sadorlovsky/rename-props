@@ -1,6 +1,6 @@
 {
   "name": "@sadorlovsky/rename-props",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Rename object properties",
   "main": "lib/index.js",
   "license": "MIT",
@@ -18,7 +18,8 @@
     "build": "tsc",
     "test": "ava-ts",
     "precommit": "nyr lint",
-    "prepush": "nyr lint && nyr test"
+    "prepush": "nyr lint && nyr test",
+    "prepublish": "nyr lint && nyr test && nyr build"
   },
   "files": [
     "lib/index.js"

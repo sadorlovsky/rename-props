@@ -13,7 +13,7 @@ $ yarn add @sadorlovsky/rename-props
 ## Usage
 
 ```js
-const renameProps = require('rename-props')
+const renameProps = require('@sadorlovsky/rename-props')
 
 const obj = { a: 1, b: 2 }
 const renamed = renameProps(obj, { a: 'x', b: 'y' })
@@ -24,7 +24,7 @@ FP style:
 
 ```js
 const { map, curryRight } = require('lodash/fp')
-const renameProps = require('rename-props')
+const renameProps = require('@sadorlovsky/rename-props')
 
 const list = [{ a: 1, b: 2 }, { a: 3, b: 4 }]
 const renamed = map(curryRight(renameProps)({ a: 'x', b: 'y' }))(list)
