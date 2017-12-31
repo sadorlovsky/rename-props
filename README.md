@@ -23,11 +23,11 @@ console.log(renamed) // { x: 1, y: 2 }
 FP style:
 
 ```js
-const { map } = require('lodash/fp')
+const { map, curryRight } = require('lodash/fp')
 const renameProps = require('rename-props')
 
 const list = [{ a: 1, b: 2 }, { a: 3, b: 4 }]
-const renamed = map(renameProps.fp({ a: 'x', b: 'y' }))(list)
+const renamed = map(curryRight(renameProps)({ a: 'x', b: 'y' }))(list)
 
 console.log(renamed) // [{ x: 1, y: 2 }, { x: 3, y: 4 }]
 ```
