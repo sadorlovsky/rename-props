@@ -1,5 +1,5 @@
 import test from 'ava'
-import renameProps from '../src'
+import { renameProps } from '../src'
 
 test('do nothing if no keys to rename', t => {
   const renamed = renameProps({ x: 1, y: 2 })

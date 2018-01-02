@@ -1,4 +1,4 @@
-export default function renameProps (obj: object, keyMap?: object): object {
+export function renameProps (obj: object, keyMap?: object): object {
   const cloned = { ...obj }
 
   if (keyMap !== undefined) {
