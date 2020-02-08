@@ -2,7 +2,7 @@ type Obj = {
   [key: string]: any
 }
 
-export function renameProps(obj: Obj, keyMap?: Obj): Obj {
+export function renameProps (obj: Obj, keyMap?: Obj): Obj {
   const cloned = { ...obj }
 
   if (keyMap !== undefined) {

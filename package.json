@@ -16,11 +16,21 @@
   "scripts": {
     "build": "tsc",
     "test": "nyc ava",
+    "lint": "eslint source/**/*.ts test/**/*.ts",
     "prepublishOnly": "npm run test && npm run build"
   },
   "files": [
     "lib/index.js"
   ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.ts": "eslint --fix"
+  },
   "ava": {
     "extensions": [
       "ts"
@@ -45,8 +55,17 @@
   },
   "devDependencies": {
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
+    "@typescript-eslint/eslint-plugin": "^2.19.0",
+    "@typescript-eslint/parser": "^2.19.0",
     "ava": "^3.2.0",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
     "husky": "^4.2.1",
+    "lint-staged": "^10.0.7",
     "nyc": "^15.0.0",
     "ts-node": "^8.6.2",
     "typescript": "^3.7.5"

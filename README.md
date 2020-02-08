@@ -33,7 +33,3 @@ const renamed = rename(list)
 
 console.log(renamed) // [{ x: 1, y: 2 }, { x: 3, y: 4 }]
 ```
-
-## License
-
-MIT © [Zach Orlovsky](https://orlovsky.dev)
