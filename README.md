@@ -1,4 +1,4 @@
-# rename-props
+# rename-props [![build](https://github.com/sadorlovsky/rename-props/workflows/build/badge.svg)](#rename-props) [![codecov](https://codecov.io/gh/sadorlovsky/rename-props/branch/master/graph/badge.svg)](https://codecov.io/gh/sadorlovsky/rename-props)
 
 > rename object properties
 
