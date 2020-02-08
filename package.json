@@ -1,6 +1,6 @@
 {
   "name": "@sadorlovsky/rename-props",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Rename object properties",
   "main": "lib/index.js",
   "license": "MIT",
@@ -8,31 +8,31 @@
   "author": {
     "name": "Zach Orlovsky",
     "email": "sadorlovsky@gmail.com",
-    "url": "orlovsky.rocks"
+    "url": "https://orlovsky.dev"
   },
   "engines": {
     "node": ">=6"
   },
   "scripts": {
-    "lint": "tslint -p .",
     "build": "tsc",
-    "test": "ava-ts",
-    "precommit": "nyr lint",
-    "prepush": "nyr lint && nyr test",
-    "prepublish": "nyr lint && nyr test && nyr build"
+    "test": "ava",
+    "prepublishOnly": "npm run test && npm run build"
   },
   "files": [
     "lib/index.js"
   ],
-  "dependencies": {},
+  "ava": {
+    "extensions": [
+      "ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ]
+  },
   "devDependencies": {
-    "ava": "^0.24.0",
-    "ava-ts": "^0.23.0",
-    "husky": "^0.14.3",
-    "nyr": "^1.1.0",
-    "ts-node": "^4.1.0",
-    "tslint": "^5.8.0",
-    "tslint-config-standard": "^7.0.0",
-    "typescript": "^2.6.2"
+    "ava": "^3.2.0",
+    "husky": "^4.2.1",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.7.5"
   }
 }
