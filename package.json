@@ -15,7 +15,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "test": "ava",
+    "test": "nyc ava",
     "prepublishOnly": "npm run test && npm run build"
   },
   "files": [
@@ -29,9 +29,25 @@
       "ts-node/register"
     ]
   },
+  "nyc": {
+    "extends": "@istanbuljs/nyc-config-typescript",
+    "all": true,
+    "check-coverage": true,
+    "reporter": [
+      "lcovonly",
+      "text"
+    ],
+    "include": [
+      "source"
+    ],
+    "branches": 100,
+    "functions": 100
+  },
   "devDependencies": {
+    "@istanbuljs/nyc-config-typescript": "^1.0.1",
     "ava": "^3.2.0",
     "husky": "^4.2.1",
+    "nyc": "^15.0.0",
     "ts-node": "^8.6.2",
     "typescript": "^3.7.5"
   }
