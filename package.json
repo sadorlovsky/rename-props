@@ -2,7 +2,6 @@
   "name": "@sadorlovsky/rename-props",
   "version": "5.0.0",
   "description": "Rename object properties",
-  "main": "lib/index.js",
   "license": "MIT",
   "repository": "sadorlovsky/rename-props",
   "author": {
@@ -14,7 +13,11 @@
     "node": ">=10"
   },
   "scripts": {
-    "build": "tsc",
+    "build:cjs": "del dist/csj && tsc --outDir dist/cjs",
+    "build:esm": "del dist/esm && tsc -m es6 --outDir dist/esm",
+    "build:browser": "del dist/browser && rollup -c rollup.config.ts && size-limit",
+    "prebuild": "del dist",
+    "build": "npm run build:cjs && npm run build:esm && npm run build:browser",
     "test": "nyc ava",
     "lint": "eslint source/**/*.ts test/**/*.ts",
     "prepublishOnly": "npm run test && npm run build"
@@ -22,6 +25,13 @@
   "files": [
     "lib/index.js"
   ],
+  "sideEffects": false,
+  "main": "dist/cjs/index.js",
+  "unpkg": "dist/browser/rename-props.min.js",
+  "module": "dist/esm/index.js",
+  "source": "source/index.ts",
+  "browser": "dist/browser/rename-props.js",
+  "types": "dist/cjs/index.d.ts",
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
@@ -55,9 +65,13 @@
   },
   "devDependencies": {
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
+    "@rollup/plugin-typescript": "^3.0.0",
+    "@size-limit/preset-small-lib": "^4.0.1",
     "@typescript-eslint/eslint-plugin": "^2.19.0",
     "@typescript-eslint/parser": "^2.19.0",
     "ava": "^3.2.0",
+    "decamelize": "^4.0.0",
+    "del-cli": "^3.0.0",
     "eslint": "^6.8.0",
     "eslint-config-standard": "^14.1.0",
     "eslint-plugin-import": "^2.20.1",
@@ -67,7 +81,17 @@
     "husky": "^4.2.1",
     "lint-staged": "^10.0.7",
     "nyc": "^15.0.0",
+    "rollup": "^1.31.0",
+    "rollup-plugin-terser": "^5.2.0",
+    "size-limit": "^4.0.1",
     "ts-node": "^8.6.2",
     "typescript": "^3.7.5"
-  }
+  },
+  "size-limit": [
+    {
+      "path": "dist/browser/rename-props.min.js",
+      "limit": "210 B",
+      "webpack": false
+    }
+  ]
 }
