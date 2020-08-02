@@ -1,6 +1,6 @@
 {
   "name": "@sadorlovsky/rename-props",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "Rename object properties",
   "license": "MIT",
   "repository": "sadorlovsky/rename-props",
@@ -90,7 +90,7 @@
   "size-limit": [
     {
       "path": "dist/browser/rename-props.min.js",
-      "limit": "210 B",
+      "limit": "215 B",
       "webpack": false
     }
   ]
